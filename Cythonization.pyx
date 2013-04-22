@@ -20,6 +20,10 @@ class FactorInt:
         else: #raise ValueError if it is not an integer
             raise ValueError, "Arguement is not an integer"
     
+    #originally set to string
+    def __repr__(self):
+        return string
+    
     #check if the number is divisible by specific number
     def isDivisible(int numtor, int denumtor):
         cdef bool div = numtor%denumtor==0
