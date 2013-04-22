@@ -31,8 +31,9 @@ class FactorInt:
         
     #if check if integer is already prime number
     def isAlreadyPrime(int numtor3):
+        cdef int n = numtor3
         for prime in [2,3,5,7,9,11]:
-            if isDivisible(numtor3, prime):
+            if isDivisible(n, prime):
                 return False
         return True
     
