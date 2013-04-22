@@ -22,7 +22,7 @@ class FactorInt:
     
     #originally set to string
     def __repr__(self):
-        return string
+        return self.string
     
     #check if the number is divisible by specific number
     def isDivisible(int numtor, int denumtor):
