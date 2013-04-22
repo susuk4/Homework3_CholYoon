@@ -1,3 +1,6 @@
+%cython
+from cpython cimport bool
+
 class FactorInt:
     def __Init__(self, integer):
         #initialize class with initial string, and denominator and check if it is integer
@@ -6,8 +9,10 @@ class FactorInt:
             if not isAlreadyPrime():
                 self.denominator = [7,5,3,2]
                 self.string = ""
-                self.negative = isNegative(self.n)
-                self.lastnumber = str(self.n)
+                if isNegativeCython(self.n):
+                    self.negative = True
+                    self.n = -1 * self.n
+                self.lastnumber = str(self.n) 
             elif self.n==0:
                 raise ValueError, "0 cannot be factored"
             else: #print if given vallue is already a prime number
@@ -16,24 +21,30 @@ class FactorInt:
             raise ValueError, "Arguement is not an integer"
     
     #check if the number is divisible by specific number
-    def isDivisible(self,d):
-        return self.n%d==0
+    def isDivisible(int numtor, int denumtor):
+        cdef bool div = numtor%denumtor==0
+        return div
     
     #check if the number is divisible by any number
-    def isDivisible(self):
-        return isAlreadyPrime()
+    def isDivisible(int numtor2):
+        return isAlreadyPrime(numtor2)
         
-    #if check if integer is already primenumber
-    def isAlreadyPrime(self):
+    #if check if integer is already prime number
+    def isAlreadyPrime(int numtor3):
         for prime in [2,3,5,7,9,11]:
-            if isDivisible(prime):
+            if isDivisible(numtor3, prime):
                 return False
         return True
     
-    #check to see if input is negative, if it is negative -1 will be added at last result
-    def isNegative(self):
-        if self.n<0:
-            self.n = -1*self.n
+    #check to see if input is negative
+    def isNegative(self,g2):
+        return g2<0
+    
+    #cythonization of it input is negative
+    def isNegtaiveCython(int g2):
+        cdef bool tof = g2<0
+        return tof
+        
     #looping through 2,3,5,7 which are prime numbers between 1 - 10 except 1
     #and return resulted string
     def toString(self):
@@ -45,4 +56,4 @@ class FactorInt:
                 self.string = str(de)+"*"+self.string(self.lastnumber)
         if self.negative: #if negative add negative value
             self.string = str(-1)+"*"+self.string
-        return str(self.n)+": "+self.string 
+        return str(self.n)+": "+self.string
