@@ -8,5 +8,5 @@ def compute_prime(n):
                     possible_val.remove(j)
     return possible_val
 
-%timeit(compute_prime(10000))
-#1 loops, best of 3: 391 ms per loop
+
+#5 loops, best of 3: 427 ms per loop
