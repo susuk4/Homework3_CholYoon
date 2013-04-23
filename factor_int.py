@@ -14,7 +14,7 @@ def factor_int(n):
     if n==0:
         raise ValueError, "0 cannot be factored"
     elif isPrime(n):
-        raise ValueError, str(self.n)+" is already a prime number"
+        raise ValueError, str(n)+" is already a prime number"
     denominator = [2,3,5,7,11]
     for de in denominator:
         while remainder%de==0:
