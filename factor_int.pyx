@@ -1,6 +1,9 @@
-def isPrime(testNumber):
-    for prime in [2,3,5,7,11]:
-        if testNumber%prime==0:
+%cython
+
+def isPrime(int test):
+    cdef int i
+    for i in [2,3,5,7,11]:
+        if test%i==0:
             return False
     else:
         return True
@@ -30,3 +33,5 @@ def factor_int(n):
     elif remainder == -1:
         returnStr = "-1*"+returnStr
     return returnStr
+
+timeit(factor_int(30))
