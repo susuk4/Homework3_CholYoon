@@ -13,4 +13,3 @@ def series_sum_sq(n):
         raise ValueError, str(n)+" is not an integer"
 #Time n = 100000
 #100 loops, best of 3: 5.58 ms per loop
-%timeit(series_sum_sq(10000))
