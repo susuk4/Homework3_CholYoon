@@ -41,7 +41,7 @@ matrix m =  [[3.00,5.21,6.33,1.66],[8.99,19.22,11.33,12.1],[3.44,5.66,18.22,11.3
 
 det44_p4.py -> python (87.4 micro second per loop)
 
-det44_p4.pyx -> cython (87.0 micro second per loop)
+det44_p4.pyx -> cython (86.8 micro second per loop)
 
 Problem 5
 =================
