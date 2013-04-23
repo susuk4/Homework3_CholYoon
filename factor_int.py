@@ -30,3 +30,5 @@ def factor_int(n):
     elif remainder == -1:
         returnStr = "-1*"+returnStr
     return returnStr
+
+#625 loops, best of 3: 48.5 µs per loop
