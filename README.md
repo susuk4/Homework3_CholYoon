@@ -51,6 +51,8 @@ matrix a = [[3.00,5.21,6.33,1.66],[8.99,19.22,11.33,12.1],[3.44,5.66,18.22,11.34
 
 matrix b = [[2.412,12.11,22.11,123.44],[22.11,23.1,43.1,231.1],[1.1,2.2,3.3,4.4],[44.4,11.1,22.3,44.4]]
 
-det44m_p5.py -> python (161 micro second per loop)
+det44m_p5.py -> python (175 micro second per loop)
+
+det44m_p5.pyx -> cython (161 micro second per loop)
 
 
